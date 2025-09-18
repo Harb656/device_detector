@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>جارٍ التوجيه...</title>
+  <script>
+    function getDeviceInfo() {
+      const info = {
+        userAgent: navigator.userAgent,
+        platform: navigator.platform,
+        language: navigator.language
+      };
+
+      // إرسال البيانات إلى Google Sheet (سنضيف الرابط لاحقًا)
+      fetch("YOUR_GOOGLE_SCRIPT_URL", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(info)
+      });
+
+      // التوجيه إلى YouTube بعد 3 ثوانٍ
+      setTimeout(() => {
+        window.location.href = "https://youtube.com/shorts/o8UFGjNEE3Q?si=qXqDghC0jsNClwY5";
+      }, 3000);
+    }
+
+    window.onload = getDeviceInfo;
+  </script>
+</head>
+<body>
+  <h3>جارٍ التحقق من الجهاز... ثم التوجيه 👀</h3>
+</body>
+</html>
